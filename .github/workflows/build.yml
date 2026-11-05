@@ -26,6 +26,8 @@ jobs:
         echo "THEOS=$THEOS"
 
     - name: Install Theos (official installer)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         export THEOS=${{ github.workspace }}/theos
         rm -rf "$THEOS"
